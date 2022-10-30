@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema(
   {
@@ -11,7 +11,7 @@ const userSchema = new Schema(
       // More info:
       // https://mongoosejs.com/docs/validation.html#the-unique-option-is-not-a-validator
       dropDups: true,
-      trim: true,  // Remove leading and trailing whitespace
+      trim: true, // Remove leading and trailing whitespace
     },
     email: {
       type: String,
@@ -19,24 +19,24 @@ const userSchema = new Schema(
       unique: true,
       dropDups: true,
       validate: {
-        validator: function(value) {
+        validator: function (value) {
           // Email regex, e.g., my@email.com
           return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value);
         },
-        message: props => `${props.value} is not a valid email address!`
+        message: (props) => `${props.value} is not a valid email address!`,
       },
     },
     thoughts: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Thought",
-        }
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Thought",
+      },
     ],
     friends: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "User",
-        }
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
     ],
   },
   {
@@ -46,6 +46,6 @@ const userSchema = new Schema(
   }
 );
 
-const User = model('User', userSchema);
+const User = model("User", userSchema);
 
 module.exports = User;

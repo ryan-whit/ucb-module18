@@ -23,4 +23,28 @@ module.exports = {
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.status(500).json(err));
   },
+	// TODO: delete user's thoughts and friends as well
+	// deleteUser(req, res) {
+  //   Student.findOneAndRemove({ _id: req.params.studentId })
+  //     .then((student) =>
+  //       !student
+  //         ? res.status(404).json({ message: 'No such student exists' })
+  //         : Course.findOneAndUpdate(
+  //             { students: req.params.studentId },
+  //             { $pull: { students: req.params.studentId } },
+  //             { new: true }
+  //           )
+  //     )
+  //     .then((course) =>
+  //       !course
+  //         ? res.status(404).json({
+  //             message: 'Student deleted, but no courses found',
+  //           })
+  //         : res.json({ message: 'Student successfully deleted' })
+  //     )
+  //     .catch((err) => {
+  //       console.log(err);
+  //       res.status(500).json(err);
+  //     });
+  // },
 };
