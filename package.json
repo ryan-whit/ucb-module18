@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ryan-whit/ucb-module18#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "mongoose": "^6.7.0"
   }
 }
