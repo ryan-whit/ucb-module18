@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ryan-whit/ucb-module18/issues"
   },
-  "homepage": "https://github.com/ryan-whit/ucb-module18#readme"
+  "homepage": "https://github.com/ryan-whit/ucb-module18#readme",
+  "dependencies": {
+    "mongoose": "^6.7.0"
+  }
 }
