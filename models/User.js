@@ -7,9 +7,9 @@ const userSchema = new Schema(
       required: true,
       unique: true,
       // "unique" is not a validator. Use in combination
-      // with dropDups to ensure that the username is unique.
+      //   with dropDups to ensure that the username is unique.
       // More info:
-      // https://mongoosejs.com/docs/validation.html#the-unique-option-is-not-a-validator
+      //   https://mongoosejs.com/docs/validation.html#the-unique-option-is-not-a-validator
       dropDups: true,
       trim: true, // Remove leading and trailing whitespace
     },
