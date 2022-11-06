@@ -1,3 +1,4 @@
+// Define the User model and associated Schema
 const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema(

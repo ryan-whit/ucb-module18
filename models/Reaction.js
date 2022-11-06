@@ -1,3 +1,7 @@
+// Define a reaction schema, but not the associated model.
+// Other schemas will create objects from the reaction
+// schema directly, meaning they will not be associated
+// with unique IDs.
 const { Schema, Types } = require('mongoose');
 
 const reactionSchema = new Schema(

@@ -1,3 +1,4 @@
+// All routes associated with the User model
 const router = require("express").Router();
 const {
   createUser,

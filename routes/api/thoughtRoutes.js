@@ -1,3 +1,4 @@
+// All routes associated with the Thought model
 const router = require("express").Router();
 const {
   getThoughts,

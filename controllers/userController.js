@@ -1,7 +1,8 @@
+// Define the controller used for the User model
 const User = require("../models/User");
 
 module.exports = {
-  // create a new user
+  // Create a new user
   createUser(req, res) {
     User.create(req.body)
       .then((dbUserData) => res.json(dbUserData))
@@ -64,6 +65,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+  // Remove a friend from the User's list of friends
   removeFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
