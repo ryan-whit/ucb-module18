@@ -2,7 +2,14 @@
 // Other schemas will create objects from the reaction
 // schema directly, meaning they will not be associated
 // with unique IDs.
-const { Schema, Types } = require('mongoose');
+const { Schema, Types } = require("mongoose");
+
+// Simple function for using built-in Date functionality
+// for Date string formatting.
+function formatDate(date) {
+  let formattedDate = new Date(date);
+  return formattedDate.toDateString();
+}
 
 const reactionSchema = new Schema(
   {
@@ -20,9 +27,9 @@ const reactionSchema = new Schema(
       required: true,
     },
     createdAt: {
-        type: Date,
-        default: Date.now,
-        // TODO: add a getter method to format the timestamp
+      type: Date,
+      default: Date.now,
+      get: formatDate,
     },
   },
   {

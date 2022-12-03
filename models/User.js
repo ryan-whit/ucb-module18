@@ -43,9 +43,19 @@ const userSchema = new Schema(
   {
     toJSON: {
       getters: true,
+      virtuals: true,
     },
   }
 );
+
+// Create a virtual method with a getter for returning a
+// User's number of friends
+userSchema
+  .virtual("friendCount")
+  // Getter method
+  .get(function () {
+    return this.friends.length;
+  })
 
 const User = model("User", userSchema);
 

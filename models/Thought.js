@@ -27,6 +27,8 @@ const thoughtSchema = new Schema(
   }
 );
 
+// Create a virtual method with a getter for returning the
+// number of reactions associated with the User's reactions.
 thoughtSchema
   .virtual("reactionCount")
   // Getter method
